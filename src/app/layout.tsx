@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Provider } from "../components/ui/provider";
 import { Toaster } from "../components/ui/toaster";
+import { Layout } from "@/components/layout/Layout";
 
 
 
@@ -42,9 +43,10 @@ export default function RootLayout({
       >
         {/* Chakra UI and any app-wide context providers */}
         <Provider>
+          <Layout>
           {/* page content renders here */}
           {children}
-
+           </Layout>
           {/* Global toaster for notifications */}
           <Toaster />
         </Provider>
