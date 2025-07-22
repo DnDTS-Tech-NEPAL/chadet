@@ -10,8 +10,6 @@ import { useConfigQuery } from "@/hooks/api";
 
 export const useSliderImages = () => {
   const { data: config } = useConfigQuery();
-//   const { data: homeData } = useHomePageQuery();
-
   const heroType = config?.hero_type;
   const heroContent = config?.content || [];
 

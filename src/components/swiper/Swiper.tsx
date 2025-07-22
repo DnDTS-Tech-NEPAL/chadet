@@ -96,7 +96,7 @@ export const Swiper = ({
 }: Props) => {
   const defaultOptions: SwiperOptions = {
     modules: [Navigation, Pagination, Autoplay],
-    navigation: true,
+    navigation: false,
     pagination: { clickable: true },
     loop: true,
     autoplay: {
@@ -112,14 +112,7 @@ export const Swiper = ({
       <SwiperCore {...defaultOptions}>
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <Box
-              position="relative"
-              width="100%"
-              paddingTop={`${100 / aspectRatio}%`}
-              overflow="hidden"
-            >
               {slide}
-            </Box>
           </SwiperSlide>
         ))}
       </SwiperCore>

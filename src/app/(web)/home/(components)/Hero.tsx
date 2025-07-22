@@ -14,6 +14,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { useWindowSize } from "@/hooks/app";
 import { useConfigQuery } from "@/hooks/api";
 import { Swiper } from "@/components";
+import { useSliderImages } from "@/hooks/app/home/heroSection";
 
 export const HeroSection = ( ) => {
   const router = useRouter();
@@ -22,21 +23,8 @@ export const HeroSection = ( ) => {
 
   const { hero_type: heroType = "default", content = [] } = config || {};
 
-  // ✅ slides now are ReactNode[] with <Image /> elements
-  const slides =
-    content?.map((item) => (
-      <Image
-        key={item.hero_title}
-        src={item.hero_image_link || item.hero_image || ""}
-        alt={item.hero_title || "Hero Image"}
-        objectFit="cover"
-        position="absolute"
-        top={0}
-        left={0}
-        width="100%"
-        height="100%"
-      />
-    )) || [];
+
+const slides = useSliderImages();
 
   const getResponsiveHeight = () => {
     if (!width) return "70vh";
