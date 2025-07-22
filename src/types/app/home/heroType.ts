@@ -24,6 +24,6 @@ export type ContentType = {
   button_2_text_color: "string";
   button_2_redirect_link: "string";
 };
-export type HomePageAPIResponseType = {
-  Data: HomePageType;
-};
+// export type HomePageAPIResponseType = {
+//   Data: HomePageType;
+// };

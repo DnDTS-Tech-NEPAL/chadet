@@ -1,24 +1,25 @@
 "use client";
 
-import { useConfigQuery, useHomePageQuery } from "@/hooks/api";
+// import { useConfigQuery} from "@/hooks/api";
 import Image from "next/image";
 import { Box, Heading, Text, Button, HStack } from "@chakra-ui/react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { ReactNode } from "react";
 import { HomePageType } from "@/types/app/home";
+import { useConfigQuery } from "@/hooks/api";
 
 export const useSliderImages = () => {
   const { data: config } = useConfigQuery();
-  const { data: homeData } = useHomePageQuery();
+//   const { data: homeData } = useHomePageQuery();
 
-  const heroType = homeData?.hero_type;
-  const heroContent = homeData?.content || [];
+  const heroType = config?.hero_type;
+  const heroContent = config?.content || [];
 
   const mapHeroItemToSlideData = (item: any) => ({
     imageUrl:
       item.hero_image_link ||
       item.hero_image ||
-      config?.company_details_url ||
+      config?.url ||
       "",
     redirectUrl: item.hero_image_redirect_link || "#",
     title: item.hero_title,
@@ -43,18 +44,18 @@ export const useSliderImages = () => {
     },
   });
 
-  const fallbackImages = (Object.keys(homeData || {}) as (keyof HomePageType)[])
+  const fallbackImages = (Object.keys(config || {}) as (keyof HomePageType)[])
     .filter(
       (key) =>
         key.startsWith("main_img") &&
         key.endsWith("_url") &&
-        typeof homeData?.[key] === "string" &&
-        homeData[key]?.trim() !== ""
+        typeof config?.[key] === "string" &&
+        config[key]?.trim() !== ""
     )
     .map((key) => {
-      const imageUrl = String(homeData?.[key] || config?.company_details_url || "");
+      const imageUrl = String(config?.[key] || config?.url || "");
       const redirectKey = key.replace("_url", "_redirect") as keyof HomePageType;
-      const redirectUrl = String(homeData?.[redirectKey] || "#");
+      const redirectUrl = String(config?.[redirectKey] || "#");
       return mapHeroItemToSlideData({
         hero_image_link: imageUrl,
         hero_image_redirect_link: redirectUrl,
