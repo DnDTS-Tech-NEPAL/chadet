@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
 import { Toaster } from "../components/ui/toaster";
 import { Layout } from "@/components/layout/Layout";
-import { Provider } from "./provider";
+import { Providers } from "./provider";
 
 
 
@@ -42,14 +43,14 @@ export default function RootLayout({
         className={`${geistSans.className} ${geistMono.className}  antialiased`}
       >
         {/* Chakra UI and any app-wide context providers */}
-        <Provider>
+        <Providers>
           <Layout>
           {/* page content renders here */}
           {children}
            </Layout>
           {/* Global toaster for notifications */}
           <Toaster />
-        </Provider>
+        </Providers>
       </body>
     </html>
   );
