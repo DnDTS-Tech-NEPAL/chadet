@@ -6,7 +6,7 @@ export const colors = {
     border: { value: "#A3A29E" },
   },
   background: {
-    body: { value: "#FFFAE2" },
+    body:  { value:"#FFFAE2"} ,
   },
   text: {
     primary: { value: "#928B6A" },
