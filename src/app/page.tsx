@@ -1,7 +1,9 @@
 "use client";
 
-const page = () => {
-  return <div>Hello World</div>;
+import { DefaultLandingPage } from "./(web)";
+
+const Home = () => {
+  return <DefaultLandingPage/>;
 };
 
-export default page;
+export default Home;
