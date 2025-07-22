@@ -4,7 +4,7 @@ import { useConfigQuery } from "@/hooks/api";
 export const DefaultLandingPage = () => {
   const { data: config, isLoading } = useConfigQuery();
 
-  if (isLoading || !config) return null; // Or show skeleton/loading
+  if (isLoading || !config) return null; 
 
-  return <HeroSection initialData={config} />;
+  return <HeroSection />;
 };
