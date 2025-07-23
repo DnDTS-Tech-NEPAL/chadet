@@ -10,6 +10,6 @@ export const colors = {
   },
   text: {
     primary: { value: "#928B6A" },
-    secondary: { value: "#CC6A75" },
+    secondary: { value: "#A4415E" },
   },
 };
