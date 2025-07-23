@@ -1,15 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {
-  Box,
-  HStack,
-  VStack,
-  Button,
-  Text,
-  Heading,
-  Image,
-} from "@chakra-ui/react";
+import { Box, HStack, VStack, Button, Text, Heading } from "@chakra-ui/react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useWindowSize } from "@/hooks/app";
 import { useConfigQuery } from "@/hooks/api";
