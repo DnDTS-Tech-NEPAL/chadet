@@ -1,5 +1,5 @@
 export const API_ROUTES = {
-    APP: {
-        CONFIG: "websiteconfig",
-    }
-}
+  APP: {
+    CONFIG: "websiteconfig",
+  },
+};

@@ -39,9 +39,7 @@ export const Swiper = ({
     <Box position="relative" w="full" h="full">
       <SwiperCore {...defaultOptions}>
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-              {slide}
-          </SwiperSlide>
+          <SwiperSlide key={index}>{slide}</SwiperSlide>
         ))}
       </SwiperCore>
     </Box>

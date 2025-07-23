@@ -42,17 +42,16 @@ export type HomepageCardType = {
   docstatus: number;
   idx: number;
   card_label: string;
-  icon:string
+  icon: string;
   parent: string;
   parentfield: string;
   parenttype: string;
   doctype: string;
 };
 
-
 export type ConfigAPIResponse = {
   Data: ConfigType;
-  initialData : ConfigType;
+  initialData: ConfigType;
 };
 export type HeroSectionProps = {
   initialData: ConfigType;

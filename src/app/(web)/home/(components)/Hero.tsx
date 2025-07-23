@@ -16,15 +16,14 @@ import { useConfigQuery } from "@/hooks/api";
 import { Swiper } from "@/components";
 import { useSliderImages } from "@/hooks/app/home/heroSection";
 
-export const HeroSection = ( ) => {
+export const HeroSection = () => {
   const router = useRouter();
   const { width } = useWindowSize();
   const { data: config } = useConfigQuery();
 
   const { hero_type: heroType = "default", content = [] } = config || {};
 
-
-const slides = useSliderImages();
+  const slides = useSliderImages();
 
   const getResponsiveHeight = () => {
     if (!width) return "70vh";
@@ -137,4 +136,3 @@ const slides = useSliderImages();
     </Box>
   );
 };
-

@@ -1,7 +1,13 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
-import { badgeRecipe, buttonRecipe, headingRecipe, textRecipe, useInputRecipe, useTextareaRecipe } from "./(components)";
+import {
+  badgeRecipe,
+  buttonRecipe,
+  headingRecipe,
+  textRecipe,
+  useInputRecipe,
+  useTextareaRecipe,
+} from "./(components)";
 import { colors } from "./colors";
-
 
 const customConfig = defineConfig({
   globalCss: {

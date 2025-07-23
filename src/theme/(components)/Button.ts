@@ -14,7 +14,7 @@ export const buttonRecipe = defineRecipe({
         bg: "brand.button",
         color: "white",
         _hover: {
-          bg: "#382e2e", 
+          bg: "#382e2e",
         },
       },
       outline: {

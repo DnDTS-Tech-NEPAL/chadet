@@ -14,11 +14,7 @@ export const useSliderImages = () => {
   const heroContent = config?.content || [];
 
   const mapHeroItemToSlideData = (item: any) => ({
-    imageUrl:
-      item.hero_image_link ||
-      item.hero_image ||
-      config?.url ||
-      "",
+    imageUrl: item.hero_image_link || item.hero_image || config?.url || "",
     redirectUrl: item.hero_image_redirect_link || "#",
     title: item.hero_title,
     titleColor: item.hero_title_color,
@@ -52,7 +48,10 @@ export const useSliderImages = () => {
     )
     .map((key) => {
       const imageUrl = String(config?.[key] || config?.url || "");
-      const redirectKey = key.replace("_url", "_redirect") as keyof HomePageType;
+      const redirectKey = key.replace(
+        "_url",
+        "_redirect"
+      ) as keyof HomePageType;
       const redirectUrl = String(config?.[redirectKey] || "#");
       return mapHeroItemToSlideData({
         hero_image_link: imageUrl,
@@ -66,9 +65,10 @@ export const useSliderImages = () => {
       });
     });
 
-  const slideData = heroContent.length > 0
-    ? heroContent.map(mapHeroItemToSlideData)
-    : fallbackImages;
+  const slideData =
+    heroContent.length > 0
+      ? heroContent.map(mapHeroItemToSlideData)
+      : fallbackImages;
 
   const handleButtonClick = (url: string) => {
     if (url && url !== "#") window.location.href = url;
@@ -171,9 +171,21 @@ export const useSliderImages = () => {
             alignItems="flex-start"
             p={{ base: 4, md: 6, lg: 8 }}
           >
-            {tagline && <Text fontSize="md" color={taglineColor} mb={2}>{tagline}</Text>}
-            {title && <Heading as="h1" fontSize="4xl" color={titleColor} mb={4}>{title}</Heading>}
-            {description && <Text fontSize="xl" color={descriptionColor} mb={6}>{description}</Text>}
+            {tagline && (
+              <Text fontSize="md" color={taglineColor} mb={2}>
+                {tagline}
+              </Text>
+            )}
+            {title && (
+              <Heading as="h1" fontSize="4xl" color={titleColor} mb={4}>
+                {title}
+              </Heading>
+            )}
+            {description && (
+              <Text fontSize="xl" color={descriptionColor} mb={6}>
+                {description}
+              </Text>
+            )}
             {renderButtons(button1, button2)}
           </Box>
         </Box>
@@ -211,9 +223,21 @@ export const useSliderImages = () => {
                 lg: alignContent === "Right" ? "right" : "left",
               }}
             >
-              {tagline && <Text fontSize="lg" color={taglineColor} mb={4}>{tagline}</Text>}
-              {title && <Heading fontSize="5xl" color={titleColor} mb={4}>{title}</Heading>}
-              {description && <Text fontSize="xl" color={descriptionColor} mb={8}>{description}</Text>}
+              {tagline && (
+                <Text fontSize="lg" color={taglineColor} mb={4}>
+                  {tagline}
+                </Text>
+              )}
+              {title && (
+                <Heading fontSize="5xl" color={titleColor} mb={4}>
+                  {title}
+                </Heading>
+              )}
+              {description && (
+                <Text fontSize="xl" color={descriptionColor} mb={8}>
+                  {description}
+                </Text>
+              )}
               {renderButtons(button1, button2)}
             </Box>
           </Box>

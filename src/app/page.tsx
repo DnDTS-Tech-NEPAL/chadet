@@ -3,7 +3,7 @@
 import { DefaultLandingPage } from "./(web)";
 
 const Home = () => {
-  return <DefaultLandingPage/>;
+  return <DefaultLandingPage />;
 };
 
 export default Home;

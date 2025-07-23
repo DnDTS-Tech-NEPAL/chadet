@@ -6,8 +6,6 @@ import { Toaster } from "../components/ui/toaster";
 import { Layout } from "@/components/layout/Layout";
 import { Providers } from "./provider";
 
-
-
 // Load Geist Sans with a CSS variable
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,9 +43,9 @@ export default function RootLayout({
         {/* Chakra UI and any app-wide context providers */}
         <Providers>
           <Layout>
-          {/* page content renders here */}
-          {children}
-           </Layout>
+            {/* page content renders here */}
+            {children}
+          </Layout>
           {/* Global toaster for notifications */}
           <Toaster />
         </Providers>

@@ -4,10 +4,8 @@ import { TopBanner, TopNav } from "./(components)";
 export const Topbar = () => {
   return (
     <>
-    <TopBanner/>
-    <TopNav/>
+      <TopBanner />
+      <TopNav />
     </>
-
   );
 };
-
