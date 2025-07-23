@@ -19,3 +19,5 @@ export { default as CardIcon1 } from "./cardicon1.svg";
 export { default as CardIcon2 } from "./cardicon2.svg";
 export { default as CardIcon3 } from "./cardicon3.svg";
 export { default as CardIcon4 } from "./cardicon4.svg";
+
+export { default as ArrowRight } from "./right-arrow.svg";
